@@ -4138,7 +4138,6 @@ AS_IF([test "$enable_libplacebo" != "no"], [
 ])
 AM_CONDITIONAL(HAVE_LIBPLACEBO, [test "$enable_libplacebo" != "no"])
 
-
 dnl
 dnl  Endianness check
 dnl

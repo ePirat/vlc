@@ -75,6 +75,7 @@ pluginsinclude_HEADERS = \
 	../include/vlc_picture.h \
 	../include/vlc_picture_fifo.h \
 	../include/vlc_picture_pool.h \
+	../include/vlc_placebo.h \
 	../include/vlc_playlist.h \
 	../include/vlc_plugin.h \
 	../include/vlc_probe.h \
@@ -447,6 +448,13 @@ endif
 endif
 endif
 endif
+endif
+
+if HAVE_LIBPLACEBO
+libvlccore_la_SOURCES += \
+	video_output/placebo.c
+AM_CFLAGS += $(LIBPLACEBO_CFLAGS)
+libvlccore_la_LIBADD += $(LIBPLACEBO_LIBS)
 endif
 
 if ENABLE_SOUT
