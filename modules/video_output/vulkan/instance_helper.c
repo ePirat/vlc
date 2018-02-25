@@ -18,7 +18,15 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
+#ifdef HAVE_CONFIG_H
+# include <config.h>
+#endif
+
 #include <assert.h>
+
+#ifdef HAVE_POLL
+# include <poll.h>
+#endif
 
 #include <vlc_common.h>
 #include <vlc_placebo.h>
