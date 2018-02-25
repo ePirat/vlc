@@ -26,7 +26,7 @@
 #endif
 
 // FIXME: parametrize!
-#define VK_USE_PLATFORM_XLIB_KHR
+#define VK_USE_PLATFORM_WIN32_KHR
 
 #include <vulkan/vulkan.h>
 #include <libplacebo/vulkan.h>
