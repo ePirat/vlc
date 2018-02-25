@@ -180,6 +180,10 @@ libglx_plugin_la_SOURCES = video_output/glx.c
 libglx_plugin_la_CFLAGS = $(AM_CFLAGS) $(GL_CFLAGS)
 libglx_plugin_la_LIBADD = $(GL_LIBS) $(X_LIBS) $(X_PRE_LIBS) -lX11
 
+libvk_win32_plugin_la_SOURCES = $(VULKAN_COMMONSOURCES) video_output/vulkan/win32.c
+libvk_win32_plugin_la_CFLAGS = $(AM_CFLAGS) $(VULKAN_COMMONCFLAGS)
+libvk_win32_plugin_la_LIBADD = $(VULKAN_COMMONLIBS)
+
 libvk_x11_plugin_la_SOURCES = $(VULKAN_COMMONSOURCES) video_output/vulkan/x11.c
 libvk_x11_plugin_la_CFLAGS = $(AM_CFLAGS) $(VULKAN_COMMONCFLAGS)
 libvk_x11_plugin_la_LIBADD = $(VULKAN_COMMONLIBS) $(X_LIBS) $(X_PRE_LIBS) -lX11
@@ -201,6 +205,12 @@ vout_LTLIBRARIES += libglx_plugin.la
 endif
 if HAVE_VULKAN
 vout_LTLIBRARIES += libvk_x11_plugin.la
+endif
+endif
+
+if HAVE_WIN32_DESKTOP
+if HAVE_VULKAN
+vout_LTLIBRARIES += libvk_win32_plugin.la
 endif
 endif
 
